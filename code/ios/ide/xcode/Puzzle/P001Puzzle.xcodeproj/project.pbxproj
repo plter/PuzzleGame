@@ -19,7 +19,6 @@
 		C7785B721564C28700AC3C51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C7785B711564C28700AC3C51 /* AppDelegate.m */; };
 		C7785B751564C28700AC3C51 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C7785B731564C28700AC3C51 /* MainStoryboard.storyboard */; };
 		C7785B781564C28700AC3C51 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C7785B771564C28700AC3C51 /* ViewController.m */; };
-		C7785B801564C28800AC3C51 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7785B7F1564C28800AC3C51 /* SenTestingKit.framework */; };
 		C7785B811564C28800AC3C51 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7785B611564C28700AC3C51 /* UIKit.framework */; };
 		C7785B821564C28800AC3C51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C7785B631564C28700AC3C51 /* Foundation.framework */; };
 		C7785B8A1564C28800AC3C51 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C7785B881564C28800AC3C51 /* InfoPlist.strings */; };
@@ -64,8 +63,7 @@
 		C7785B741564C28700AC3C51 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		C7785B761564C28700AC3C51 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C7785B771564C28700AC3C51 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		C7785B7E1564C28800AC3C51 /* P001PuzzleTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = P001PuzzleTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C7785B7F1564C28800AC3C51 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		C7785B7E1564C28800AC3C51 /* P001PuzzleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = P001PuzzleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C7785B871564C28800AC3C51 /* P001PuzzleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "P001PuzzleTests-Info.plist"; sourceTree = "<group>"; };
 		C7785B891564C28800AC3C51 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C7785B8B1564C28800AC3C51 /* P001PuzzleTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = P001PuzzleTests.h; sourceTree = "<group>"; };
@@ -98,7 +96,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C7785B801564C28800AC3C51 /* SenTestingKit.framework in Frameworks */,
 				C7785B811564C28800AC3C51 /* UIKit.framework in Frameworks */,
 				C7785B821564C28800AC3C51 /* Foundation.framework in Frameworks */,
 			);
@@ -145,7 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				C7785B5D1564C28700AC3C51 /* P001Puzzle.app */,
-				C7785B7E1564C28800AC3C51 /* P001PuzzleTests.octest */,
+				C7785B7E1564C28800AC3C51 /* P001PuzzleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -156,7 +153,6 @@
 				C7785B611564C28700AC3C51 /* UIKit.framework */,
 				C7785B631564C28700AC3C51 /* Foundation.framework */,
 				C7785B651564C28700AC3C51 /* CoreGraphics.framework */,
-				C7785B7F1564C28800AC3C51 /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -258,8 +254,8 @@
 			);
 			name = P001PuzzleTests;
 			productName = P001PuzzleTests;
-			productReference = C7785B7E1564C28800AC3C51 /* P001PuzzleTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = C7785B7E1564C28800AC3C51 /* P001PuzzleTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -267,6 +263,7 @@
 		C7785B541564C28700AC3C51 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastTestingUpgradeCheck = 0720;
 				LastUpgradeCheck = 0460;
 			};
 			buildConfigurationList = C7785B571564C28700AC3C51 /* Build configuration list for PBXProject "P001Puzzle" */;
@@ -492,14 +489,13 @@
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/P001Puzzle.app/P001Puzzle";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "P001Puzzle/P001Puzzle-Prefix.pch";
 				INFOPLIST_FILE = "P001PuzzleTests/P001PuzzleTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -509,14 +505,13 @@
 				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/P001Puzzle.app/P001Puzzle";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "P001Puzzle/P001Puzzle-Prefix.pch";
 				INFOPLIST_FILE = "P001PuzzleTests/P001PuzzleTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
