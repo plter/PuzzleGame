@@ -100,7 +100,8 @@ int breakBtnStatus =1;
 
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo{
     
-    [self dismissModalViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
+
     int width = CGImageGetWidth(image.CGImage);
     int height = CGImageGetHeight(image.CGImage);
     int minValue = MIN(width, height);
